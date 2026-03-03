@@ -248,6 +248,12 @@ Notes on `save-as`:
 ::tabLink[Open the app]{href="http://localhost:3000" title="My App" id="my-app"}
 ```
 
+Or inlined:
+
+```markdown
+Once the app is running, open to :tabLink[http://localhost:3000]{href="http://localhost:3000" id="app"} to view the site
+```
+
 If `id` matches a service defined in `labspace.yaml`, clicking the link updates that service's tab
 URL and activates it. Use `id="ide"` to activate the IDE tab without changing its URL.
 
