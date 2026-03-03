@@ -22,8 +22,8 @@ jobs:
         run: |
           sed -i 's/\${REPO_OWNER}/${{ github.repository_owner }}/g' compose.override.yaml
           sed -i 's/\${REPO_NAME}/${{ github.event.repository.name }}/g' compose.override.yaml
-          sed -i 's/\${REPO_OWNER}/${{ github.repository_owner }}/g' labspace.yaml
-          sed -i 's/\${REPO_NAME}/${{ github.event.repository.name }}/g' labspace.yaml
+          sed -i 's/\${REPO_OWNER}/${{ github.repository_owner }}/g' labspace/labspace.yaml
+          sed -i 's/\${REPO_NAME}/${{ github.event.repository.name }}/g' labspace/labspace.yaml
 
       - name: Remove workflow file
         run: |
