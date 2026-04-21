@@ -1,21 +1,16 @@
 services:
   configurator:
+    image: custom-configurator
     environment:
       PROJECT_CLONE_URL: https://github.com/mikesir87/labspace-native-sbx
+      TERMINAL_URL: http://host.docker.internal:8085
 
-  # workspace:
-  #   # Override the default image if desired
-  #   # More details - https://github.com/dockersamples/labspace-infra/blob/main/docs/configuration.md#overriding-the-workspace-image
-  #   image: dockersamples/labspace-workspace-java
+  workspace:
+    provider:
+      type: labspace
+      options:
+        type: ttyd
 
-  #   # Override the default ports to publish additional ports you may need
-  #   # More details - https://github.com/dockersamples/labspace-infra/blob/main/docs/configuration.md#overriding-the-workspace-ports
-  #   ports: !override
-  #     - "6274:6274" # Expose the MCP inspector users will launch from inside the Labspace
-  #     - "8080:8080" # The port used by the app
-
-  #   # Add other environment variables as needed
-  #   environment:
-  #     DANGEROUSLY_OMIT_AUTH: "true" # Skip auth for the MCP Inspector
-
-# Add other models or services your Labspace may need
+  # Don't need this anymore, but also won't work because it tries to share
+  # the network namespace of the workspace container (which isn't a container anymore)
+  host-republisher: !reset null
