@@ -22,6 +22,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Setup project directory
+        run: |
+          rm -rf project
+          git clone https://github.com/dockersamples/sbx-quickstart project
+          cd project
+          rm -rf .git
+
       - name: Publish Labspace
         uses: dockersamples/publish-labspace-action@v2
         with:
