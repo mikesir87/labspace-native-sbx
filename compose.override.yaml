@@ -1,6 +1,6 @@
 services:
   configurator:
-    image: custom-configurator
+    image: michaelirwin244/labspace-configurator:host-support
     environment:
       PROJECT_CLONE_URL: https://github.com/mikesir87/labspace-native-sbx
       TERMINAL_URL: http://host.docker.internal:8085
