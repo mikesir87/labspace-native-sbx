@@ -43,3 +43,6 @@ sections:
     contentPath: 08-local-models.md
   - title: AI Governance at Scale
     contentPath: 09-governance-summary.md
+    
+teardown_script: |
+  sbx rm --force claude-project || true
