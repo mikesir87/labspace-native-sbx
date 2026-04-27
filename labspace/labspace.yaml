@@ -45,4 +45,4 @@ sections:
     contentPath: 09-governance-summary.md
 
 teardown_script: |
-  sbx rm --force claude-project
+  which sbx && sbx rm --force claude-project
